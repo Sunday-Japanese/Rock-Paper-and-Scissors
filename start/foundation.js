@@ -72,12 +72,22 @@ let computerSelection = getComputerChoice;
 let buttonOne = document.createElement("button");
 let buttonTwo = document.createElement("button");
 let buttonThree = document.createElement("button");
-
-buttonOne.addEventListener("click",() => playRound)
-buttonTwo.addEventListener("click",() => playRound)
-buttonThree.addEventListener("click",() => playRound)
-
 let divElement = document.createElement("div");
+
+buttonOne.addEventListener("click",() => playRound("rock",getComputerChoice()))
+buttonTwo.addEventListener("click",() => playRound("paper",getComputerChoice()))
+buttonThree.addEventListener("click",() => playRound("scissors",getComputerChoice()))
+
+buttonOne.innerText = "rock"
+buttonTwo.innerText = "paper"
+buttonThree.innerText = "scissors"
+
+document.body.appendChild(buttonOne)
+document.body.appendChild(buttonTwo)
+document.body.appendChild(buttonThree)
+
+
+
 
 
 
