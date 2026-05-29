@@ -13,22 +13,6 @@ let getComputerChoice = function() {
         }
 };
 
-// Reads use input through prompt
-function getHumanChoice() {
-    let option = prompt("Either Choose rock , paper or scissors" , "").toLowerCase();
-    
-    if (option === "rock") {
-        return  "rock";
-    }  else if (option === "scissors") {
-        return "scissors";
-        } else if   (option === "paper") {
-        return "paper";
-        } else {
-        return "please enter rock,paper or scissors"
-        }
-    
-    }
-
     let humanScore = 0;
     let computerScore = 0;
 
@@ -66,7 +50,7 @@ function playRound(getHumanChoice,getComputerChoice) {
     return `Your Score: ${humanScore} | Computer Score ${computerScore}`
 }
 
-let humanSelection = getHumanChoice;
+
 let computerSelection = getComputerChoice;
 
 let buttonOne = document.createElement("button");
@@ -74,20 +58,60 @@ let buttonTwo = document.createElement("button");
 let buttonThree = document.createElement("button");
 let divElement = document.createElement("div");
 
-buttonOne.addEventListener("click",() => playRound("rock",getComputerChoice()))
-buttonTwo.addEventListener("click",() => playRound("paper",getComputerChoice()))
-buttonThree.addEventListener("click",() => playRound("scissors",getComputerChoice()))
+buttonOne.addEventListener("click", () => {
+    
+    let divRock = document.createElement("p")
+    divRock.textContent = "you selected | ROCK"
+    divElement.appendChild(divRock)
+});
+
+buttonTwo.addEventListener("click",() => {
+let divRock = document.createElement("p")
+divRock.textContent = "you selected | PAPER"
+divElement.appendChild(divRock)
+})
+
+buttonThree.addEventListener("click",() => {
+let divRock = document.createElement("p")
+divRock.textContent = "you selected | SCISSORS"
+divElement.appendChild(divRock)
+})
 
 buttonOne.innerText = "rock"
 buttonTwo.innerText = "paper"
 buttonThree.innerText = "scissors"
 
+let humanPara = document.createElement("p")
+let computerPara = document.createElement("p")
+let scoreHead = document.createElement("h1")
+let resultPara = document.createElement("p")
+
+
+//computerPara.innerText = `computer selected | ${getComputerChoice().toUpperCase()}`
+//divElement.appendChild(computerPara)
+
+
+
 document.body.appendChild(buttonOne)
 document.body.appendChild(buttonTwo)
 document.body.appendChild(buttonThree)
+document.body.appendChild(divElement)
 
 
 
+/*function getHumanChoice() {
+        
+    if (buttonOne.innerText === "rock") {
+        return  "rock";
+    }  else if (buttonThree === "scissors") {
+        return "scissors";
+        } else if   (buttonTwo  === "paper") {
+        return "paper";
+        } else {
+        return "please enter rock,paper or scissors"
+        }
+    
+    }*/
 
 
 
